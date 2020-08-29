@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/ExperimentalHypothesis/flask-applifting-api-ms.svg?branch=master)](https://travis-ci.com/ExperimentalHypothesis/flask-applifting-api-ms)
+
 # Product aggregator microservice
   
 REST API JSON Python microservice, which allows to browse a product catalog and

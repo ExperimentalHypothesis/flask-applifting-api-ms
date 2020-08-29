@@ -2,6 +2,7 @@ import json
 from application.models.product import ProductModel
 from flask import current_app as app
 
+
 def test_get_all_products(test_client_db):
     res = test_client_db.get('/products')
     assert res.status_code == 200
