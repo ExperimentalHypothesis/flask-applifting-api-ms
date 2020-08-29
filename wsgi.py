@@ -10,7 +10,7 @@ if __name__ == "__main__":
         res = requests.post(app.config["MS_API_OFFERS_BASE_URL"] + "/auth").json()
         app.config["MS_API_ACCESS_TOKEN"] = res.get("access_token")
 
-    scheduler.add_job(id="Check updated price", func=OfferModel.update_offer_price, trigger="interval", seconds=60)
+    scheduler.add_job(id="Check updated price", func=OfferModel.update_offer_price, trigger="interval", seconds=600)
     threading.Thread(target=scheduler.start).start()
 
     app.run(debug=True, use_reloader=False)

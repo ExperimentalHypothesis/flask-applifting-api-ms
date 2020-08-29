@@ -6,7 +6,10 @@ class Offer(Resource):
     """ Resource for offer. """
 
     def post(self, id: int):
-        """ Endpoint for retrieving offers from offer MS and saving them in local database. """
+        """
+        Endpoint for retrieving offers from external offer MS and saving them in local database.
+        The id is the id the product was registered with.
+        """
         try:
             offers = OfferModel.call_offer_api(id)
         except:
@@ -22,8 +25,8 @@ class Offer(Resource):
 
 
 class Offers(Resource):
-    """ Resource for offer. """
+    """ Resource for offers. """
 
     def get(self):
         """ Endpoint for getting all offers from local database. """
-        return {"offers": [i.make_json() for i in OfferModel.query.all()]}
+        return {"offers": [i.make_json() for i in OfferModel.query.all()]}, 200

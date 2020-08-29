@@ -49,7 +49,7 @@ class Product(Resource):
 
         if product:
             product.delete_from_db()
-            return {"msg": f"product '{name}' deleted"}, 201  # OK
+            return {"msg": f"product '{name}' deleted"}, 200  # OK
         return {"msg": f"product '{name}' not found"}, 404
 
     # TODO authorizes
@@ -65,7 +65,7 @@ class Product(Resource):
         if product:
             product.description = data["description"]
             product.save_to_db()
-            return {"msg": f"product '{name}' updated"}, 201
+            return {"msg": f"product '{name}' updated"}, 200
         else:
             product = ProductModel(name, data["description"])
             product.save_to_db()
@@ -79,3 +79,4 @@ class Products(Resource):
     def get(self):
         """ Endpoint for getting all products from local database. """
         return {"products": [i.make_json() for i in ProductModel.query.all()]}, 200  # OK
+

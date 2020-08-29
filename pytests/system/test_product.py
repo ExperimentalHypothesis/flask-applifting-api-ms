@@ -39,7 +39,7 @@ def test_delete_existing_product(test_client_db):
     res_insert = test_client_db.post("product/another_product", data={"description": "description of product"})
     assert res_insert.status_code == 201
     res_del = test_client_db.delete("product/another_product")
-    assert res_del.status_code == 201
+    assert res_del.status_code == 200
     assert json.loads(res_del.data) == {"msg": f"product 'another_product' deleted"}
 
 
@@ -53,7 +53,7 @@ def test_update_existing_product(test_client_db):
     res_post = test_client_db.post("product/walkman", data={"description": "nejlepsi walkman"})
     assert res_post.status_code == 201
     res_put = test_client_db.put("product/walkman", data={"description": "nejlepsi walkman pro audiofily"})
-    assert res_put.status_code == 201
+    assert res_put.status_code == 200
     assert json.loads(res_put.data) == {"msg": f"product 'walkman' updated"}
 
 

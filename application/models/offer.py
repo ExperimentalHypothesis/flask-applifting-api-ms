@@ -44,10 +44,10 @@ class OfferModel(db.Model):
         with app.app_context():
             headers = {"Bearer": app.config["MS_API_ACCESS_TOKEN"]}
             for offer_id in OfferModel.offer_ids:
-                print(offer_id)
+                # print(offer_id)
                 offers_url = app.config["MS_API_OFFERS_BASE_URL"] + "/products/" + str(offer_id) + "/offers"
                 res = requests.get(offers_url, headers=headers).json()
-                print(f"getting updated price for id: {offer_id}\n {res}")
+                # print(f"getting updated price for id: {offer_id}\n {res}")
                 for offer in res:
                     try:
                         OfferModel.query.filter_by(offer_id=offer["id"]).update(dict(price=offer["price"]))
