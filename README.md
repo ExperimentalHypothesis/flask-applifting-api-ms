@@ -190,11 +190,16 @@ To run it type:
 python wsgi.py
 ```
 
+NOTE: I am providing .env file storing environment variables. You can change this file if you want to change the URL. Normally this file would not be in version control but
+this is just a demo and for the sake of simplicity it is provided.
 
+## How to use it:
 
-
-
-
-
+Typical workflow. Run the app and create some products doing couple of post requests on 'POST /product/{name}' endpoint. 
+Each product you create will be registered with particular ID in the provided offers API microservice. 
+To get the offers for the product, do POST request on this endpoint 'POST /offer/{id:int}', 
+provide the ID the product was registered with so that proper one-to-many mapping will saved into local database.
+To see all offers for the registered products, call 'GET /offers' endpoint.
+To see all products call 'GET /products'.
 
 

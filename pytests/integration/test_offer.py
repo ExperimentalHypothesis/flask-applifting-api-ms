@@ -9,4 +9,3 @@ def test_save(test_client_db):
     found_offer = OfferModel.find_by(o.offer_id)
     assert found_offer.price == 1000
     assert found_offer.items_in_stock == 93
-
