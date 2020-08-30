@@ -198,8 +198,8 @@ this is just a demo and for the sake of simplicity it is provided.
 Typical workflow. Run the app and create some products doing couple of post requests on 'POST /product/{name}' endpoint. 
 Each product you create will be registered with particular ID in the provided offers API microservice. 
 To get the offers for the product, do POST request on this endpoint 'POST /offer/{id:int}', 
-provide the ID the product was registered with so that proper one-to-many mapping will saved into local database.
+provide the ID the product was registered with so that proper one-to-many mapping will save into local database.
 To see all offers for the registered products, call 'GET /offers' endpoint.
-To see all products call 'GET /products'.
+To see all products, call 'GET /products'.
 
 
