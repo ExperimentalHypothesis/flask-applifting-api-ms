@@ -9,6 +9,27 @@ automatically updates prices from the external offer service (provided by Applif
 - API allowing to create, update and delete product
 - Periodically query provided microservice for offers/shops with products - currently set for 600 seconds
 
+## Instalation
+
+Installation via requirements.txt:
+
+```
+- git clone https://github.com/ExperimentalHypothesis/flask-applifting-api-ms.git
+- cd flask-applifting-api-ms
+- python3.7 -m venv venv
+- source venv/bin/activate
+- pip install -r requirements.txt
+```
+
+## Run
+To run it type:
+```
+python wsgi.py
+```
+
+NOTE: I am providing .env file storing environment variables. You can change this file if you want to change the URL. Normally this file would not be in version control but
+this is just a demo and for the sake of simplicity it is provided.
+
 ## API Endpoints:
 
 All responses have the form of JSON.
@@ -171,27 +192,6 @@ None
 200 success
 
 (returns list of all offers from local database)
-
-## Instalation
-
-Installation via requirements.txt:
-
-```
-- git clone https://github.com/ExperimentalHypothesis/flask-applifting-api-ms.git
-- cd flask-applifting-api-ms
-- python3.7 -m venv venv
-- source venv/bin/activate
-- pip install -r requirements.txt
-```
-
-## Run
-To run it type:
-```
-python wsgi.py
-```
-
-NOTE: I am providing .env file storing environment variables. You can change this file if you want to change the URL. Normally this file would not be in version control but
-this is just a demo and for the sake of simplicity it is provided.
 
 ## How to use it:
 
